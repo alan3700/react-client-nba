@@ -6,4 +6,11 @@ export const createUser = gql`
       id
     }
   }
+  
 `;
+export const LOGIN = gql`
+  mutation login($data: UserInput!) {
+    login(data: $data)
+  }
+`;
+
