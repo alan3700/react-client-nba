@@ -9,3 +9,11 @@ export const GET_LOGGED_USER = gql`
     }
   }
 `;
+export const GET_TEAMS = gql`
+query GetTeams {
+  teams {
+    name
+    id
+  }
+}
+`

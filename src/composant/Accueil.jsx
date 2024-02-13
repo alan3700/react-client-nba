@@ -12,6 +12,7 @@ const scrollToTop = () => {
     <div className="Accueil">
       <h2>Accueil</h2>
       <Link to={user?"/Nba":"/signin"} className='button' onClick={scrollToTop}>{user?"Nba Stats":"Signin"}</Link>
+      
     </div>
   );
 }

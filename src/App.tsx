@@ -80,7 +80,7 @@ console.log(user)
     <UserContext.Provider value={user}>
       <BrowserRouter>
         <Routes>
-        <Route path="/" element={<Accueil />} />
+        <Route path="/" element={<Accueil  />} />
             {user ? (
               <>
                 <Route path="/Nba" element={<NbaPage />} />
