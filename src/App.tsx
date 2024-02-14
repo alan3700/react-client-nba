@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';  // Remplacez 'Switch' par 'Routes'
-import Accueil from './composant/Accueil';
+import Accueil from './page/Accueil';
 import "./App.css";
 import {
   ApolloClient,
@@ -10,15 +10,16 @@ import {
   useMutation,
   createHttpLink,
 } from "@apollo/client";
-import Signup from './composant/Signup';
-import Signin from './composant/Signin';
+import Signup from './page/Signup';
+import Signin from './page/Signin';
 import { GET_LOGGED_USER } from './graphql/queries';
 import { UserContext } from './UserContext';
 import { Sign } from 'crypto';
-import NbaPage from './composant/NbaPage';
+import NbaPage from './page/NbaPage';
 import { setContext } from "@apollo/client/link/context";
 import API_URL from './config';
 import { isContext } from 'vm';
+import Navbar from './Composant/Navbar/Navbar';
 
 const httpLink = createHttpLink({
   uri: API_URL,
@@ -54,9 +55,10 @@ function Main() {
   
   async function onTokenChange(token?: string) {
     if (token) {
+      console.log("Token")
       localStorage.setItem("token", token);
-      console.log(localStorage);
     } else {
+      console.log("remove")
       localStorage.removeItem("token");
     }
     try {
@@ -79,6 +81,8 @@ console.log(user)
   return (
     <UserContext.Provider value={user}>
       <BrowserRouter>
+      <div>
+      <Navbar onTokenChange={onTokenChange} />
         <Routes>
         <Route path="/" element={<Accueil  />} />
             {user ? (
@@ -94,6 +98,7 @@ console.log(user)
             )}
             
         </Routes>
+        </div>
       </BrowserRouter>
     </UserContext.Provider>
   );

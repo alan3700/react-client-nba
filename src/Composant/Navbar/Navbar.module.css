@@ -1,0 +1,37 @@
+.navbarmain {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.link {
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto; /* Ajout de cette ligne */
+}
+
+.linknav {
+    text-decoration: none;
+    align-self: center;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-height: 40px;
+    border-radius: 5px;
+    color: white;
+    background: #345995;
+    letter-spacing: 0.7px;
+}
+
+.containerlink {
+    display: flex;
+    margin-left: auto; /* Ajout de cette ligne */
+
+
+}
+h3{
+    margin-top: auto;
+    margin-bottom: auto;
+}
